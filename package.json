@@ -1,0 +1,14 @@
+{
+  "name": "prueba_backend",
+  "version": "1.0.0",
+  "description": "Prueba tecnica Banco de Occidente",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jorge Iván Otero Vargas",
+  "license": "ISC"
+}
