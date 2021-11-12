@@ -1,10 +1,22 @@
 const BusGroup = require("./lib/BusGroup");
 
-const groups = [1, 2, 1, 1, 1, 2, 1, 3];
+exports.handler = async (event) => {
+    // TODO implement
+    const postObject = JSON.parse(event.body);
+    
+    // Recibe los valores desde el request
+    let groups = postObject.groups.split(',').map(function (x) { 
+      return parseInt(x, 10); 
+    });
+    
 
-const busGroups = new BusGroup(groups);
-
-const travelPlan = busGroups.getTravelPlan();
-
-console.log({ sizes: travelPlan.toString() });
-
+    const busGroups = new BusGroup(groups);
+    
+    const travelPlan = busGroups.getTravelPlan();
+    
+    const response = {
+        statusCode: 200,
+        body: JSON.stringify({sizes: travelPlan.toString()}),
+    };
+    return response;
+};
